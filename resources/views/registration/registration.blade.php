@@ -44,6 +44,10 @@
                                     <div class="col-md-12">
                                             {!! Form::label('email', 'Email') !!}<span style="color:red"> *</span>
                                             {!! Form::email('email', '', ['class'=>'form-control','placeholder'=>'Email','required']) !!}
+                                            <div>
+                                                        <span style="color:red" id="errorMsg"></span>
+                                            </div>
+                                            
                                     </div>
                             </div>
                     </div>
@@ -241,7 +245,32 @@
 @include('layout.footer')
 
 <script>
+
+// Checke if email exist
 // $(document).ready(function(){
+//         $( "[name='email']").keyup(function(){
+//                 var email = $( "[name='email']").val();
+               
+//                 $.ajax({
+//                 headers:{'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')},
+//                 type:'POST',
+//                 url:'/register',
+//                 data:{email:email; checkEmail:'yes'},
+//                 contentType:false,
+//                 cache:false,
+//                 async:true,
+//                 processData:false,
+//                 beforeSend:function(){
+//                         alert('msg');
+//                 }
+                
+//         }).done(function(data){
+//                 alert(data);
+//         }).fail(function(){
+//                 alert('failed');
+//         });
+//     });
+//         });
 //     $('.registrationForm').submit(function(event){
 //         event.preventDefault();
 //         $.ajax({

@@ -1,5 +1,39 @@
 $(document).ready(function(){
-    // alert('jk');
+    // Check if email exist
+    
+    $( "[name='email']").keyup(function(){
+                        var email2 = $( "[name='email']").val();
+                       
+                        $.ajax({
+                        headers:{'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')},
+                        type:'GET',
+                        url:'/checkEmail',
+                        data:{email:email2},
+                        async:true,
+                        beforeSend:function(){
+                        }
+                        
+                }).done(function(data){
+                        $existEmail = data;
+                        if($( "[name='email']").val()!=''){
+
+                        
+                        if ($existEmail == email2){
+                            $('#errorMsg').html('Sorry email Exist, please login to proceed');
+                            $('.regBTN').attr("disabled", true);
+                        }else if($existEmail=='' & data =='') {
+                            $('#errorMsg').html('');
+                            $('.regBTN').attr("disabled", false);
+                        }
+                    }else{
+                        $('#errorMsg').html('');
+                        $('.regBTN').attr("disabled", false);
+                    }
+                }).fail(function(){
+                    $('#errorMsg').html("fail");
+                });
+            });
+
     $('.registrationForm').submit(function(event){
                 event.preventDefault();
                 $.ajax({
@@ -13,14 +47,19 @@ $(document).ready(function(){
                         processData:false,
                         beforeSend:function(){
                           $('.customLoadingCover').fadeIn();
+                        },
+                        error:function(data)
+                        {
+                           alert('Error:', data.responseText);
                         }
                         
                 }).done(function(data){
                     window.location='/registrationConfirm';
                     $('.customLoadingCover').fadeOut();
                     
-                }).fail(function(){
-                        alert('Form fail to upload, please try again');
+                }).fail(function(data){
+                        // alert(data);
+                        // +'Form fail to upload, please try again'
                         $('.customLoadingCover').fadeOut();
                 });
             });

@@ -14,11 +14,11 @@ class CreateRegistrationsTable extends Migration
     public function up()
     {
         Schema::create('registrations', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            // $table->bigIncrements('id');
             $table->string('surname');
             $table->string('middlename')->nullable();
             $table->string('firstname');
-            $table->string('email');
+            $table->string('email')->primary();;
             $table->string('schoolRegName');
             $table->string('nameOfSchool');
             $table->string('schoolCat');

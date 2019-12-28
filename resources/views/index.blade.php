@@ -38,7 +38,7 @@ A copy of the letter of approval from the government by the school to apply for 
                          <p class="text-center" style="text-align: center;">
                              Click Complete Application to complete your application after payment has been made</p>
                             <div class="primary-button" style="text-align: center;">
-                               <a target="_blank"href="http://tectainet.com/nswip.php">Complete Application</a>
+                               <a href="#">Complete Application</a>
                       </div>
                     </div>
                   </div>                  
@@ -177,132 +177,75 @@ A copy of the letter of approval from the government by the school to apply for 
                 </div>
               </div>
             </li>
+
+
+
+
+            {{-- REGISTER SECTION ======================================= --}}
    <li>
-              <div class="heading register">
-                <h1>Register</h1>
-                <span>NSWIP Registration Proceesing Website</span> 
-              </div>
-              <div class="cd-half-width third-slide">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-12">
+      <div class="heading register">
+          <h1>Register</h1>
+          <span>NSWIP Registration Proceesing Website</span> 
+      </div>
+      <div class="cd-half-width third-slide">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
                       <div class="content third-content">
-                        <div class="row">
-                          <div class="col-md-7 left-image">
-                            <img src="{{asset('img/School.png')}}">
+                          <div class="row">
+                            <div class="col-md-3 left-image">
+                                <img src="{{asset('img/School.png')}}">
+                            </div>
+                            <div class="col-md-9">
+                                <h2  style="text-align: center;">KINDLY READ THE INSTRUCTION BEFORE PROCCEEDING</h2>
+                                <hr>
+                                <div style="text-align:justify">
+                                <p style="color:red"><b> Please note that your NSWIP processing and development takes 10 working days</b></p>
+
+                                <p>Development and hosting  will be done within the said 10 working days from the first day of successful completion of process</p>
+
+                                <p>Once the setup is completed, you shall be notified via email. Setup and procesing fee cost N12,800 to be paid in advance via bank to any of the following account. Ensure to make payment details with the School Name or ID Generated for your School</p>
+                                </div>
+                            </div>
                           </div>
-                          <div class="col-md-5">
-                            <div class="right-feature-text">
-                            <p class="text-center" style="text-align: center;">KINDLY READ THE INSTRUCTION BEFORE PROCCEEDING</p>
-                   
-<p class="text-center" style="text-align: center;"> Please note that your NSWIP processing and development takes 10 working days</p>
 
-<p class="text-center" style="text-align: center;">Development and hosting  will be done within the said 10 working days from the first day of successful completion of process</p>
-
-<p class="text-center" style="text-align: center;">Once the setup is completed, you shall be notified via email. Setup and procesing fee cost N12,800 to be paid in advance via bank to any of the following account. Ensure to make payment details with the School Name or ID Generated for your School</p>
-<p class="text-center" style="text-align: center;">0148991672(GTBANK)</p>
-<p class="text-center" style="text-align: center;">0696544334(ACCESSBANK)</p>
-<p class="text-center" style="text-align: center;">0122211218(WEMABANK)</p>
-<p class="text-center" style="text-align: center;">ACCOUNT NAME - TECTAINET TECHNOLOGIES</p>
-<p class="text-center" style="text-align: center;">When payment is been made, kindly procceed by Clicking Complete Application or fill the form below</p>
- <div class="primary-button" style="text-align: center;">
-                          <a target="_blank"href="http://tectainet.com/nswip.php">Complete Application</a>
+                          <div class="row">
+                            <div class="col-md-4" style="text-align:justify">
+                              <h3>ACCOUNT DETIALS</h3>
+                              <p>0148991672(GTBANK)</p>
+                              <p>0696544334(ACCESSBANK)</p>
+                              <p>0122211218(WEMABANK)</p>
+                              <p>ACCOUNT NAME - TECTAINET TECHNOLOGIES</p>
+                            </div>
+                            <div class="col-md-8">
+                              <div class="row">
+                                <div class="col-md-12">
+                                    <p class="text-center" style="text-align: center;">Fresh Application</p>
+                              
+                                    <div class="primary-button">
+                                        <a target="_blank"href="{{ url('/registration') }}">Start Application</a>
+                                      </div>
+                                </div>
+                              </div>
+                              <hr>
+                              <div class="row">
+                                  <div class="col-md-12">
+                                      <p class="text-center" style="text-align: center;">When payment is been made, kindly procceed by Clicking Complete Application</p>
+                                      <div class="primary-button" style="text-align: center;">
+                                                               <a target="_blank"href="#">Complete Application</a>
+                                                               </div>
+                                  </div>
+                              </div>
+                            </div>
+                            
                           </div>
-</div>
-</div>
-</div>
-</div>
-</div>
- <div class="col-md-5">
-                            <div class="right-feature-text">
-                            <p class="text-center" style="text-align: center;">YOU CAN AS WELL FILL THE FORM BELOW TO COMPLETE YOUR APPLICATION</p>
-<div class="sm-row-fluid smue-row sme-dsbl-margin-left sme-dsbl-margin-right">
-<div class="sm-span3 mdue-clmn sme-dsbl-margin-left sme-dsbl-margin-right  smue-empty sm-hidden-phone"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+   </li>
 
-<div class="sm-span6 smue-clmn sme-dsbl-margin-left sme-dsbl-margin-right contact_form">
-<form class="mpce-cfa-form  smue-form-20" enctype="multipart/form-data" method="post" role="form">
-<p class="mpce-cfa-form-group mpce-cfa-form-text">
-  <input name="Name" type="text" class="cfa-input required" id="name2" value="" size="90" placeholder="First and Last Name of Contact Person * " required="true">
-</p>
-
-<p class="mpce-cfa-form-group mpce-cfa-form-email"><input name="Email" type="email" class="cfa-mail required" id="email" size="70" placeholder="Email * " required="true" />
-</p>
-
-<p class="mpce-cfa-form-group mpce-cfa-form-text"><input name="SchoolName" type="text" class="cfa-input required" id="SchoolName" size="101" placeholder="Enter your School Registered Name * " required="true" />
-</p>
-
-<p class="mpce-cfa-form-group mpce-cfa-form-text"><input class="cfa-input" id="Schoolid" name="Schoolid" placeholder="Enter the Generated School ID (CU____)" size="60" type="text" /></p>
-
-
-<p class="mpce-cfa-form-group mpce-cfa-form-text"><input class="cfa-input required" id="Schoolid" name="Schoolid" size="60" placeholder="RC No/BN as provided by Ministry If Available " type="text" /></p>
-
-<p class="mpce-cfa-form-group mpce-cfa-form-email"><input class="cfa-mail required" id="Officialemail" size="70" name="OfficialEmail" placeholder="Official Email * " required="true" type="email" /></p>
-
-<p class="mpce-cfa-form-group mpce-cfa-form-text"><input name="NatureofSchool" type="text" class="cfa-input required" id="NatureofSchool" size="70" placeholder="Nature of School * " required="true" />
-</p>
-
-<p class="mpce-cfa-form-group mpce-cfa-form-text"><input name="Address" type="text" class="cfa-input" id="Address" size="150" placeholder="School Address" />
-</p>
-
-<p class="mpce-cfa-form-group mpce-cfa-form-text"><input class="cfa-input" id="Taxrate" size="70" name="Taxrate" placeholder="Tax rate(%) you charge on your School Products and Services" type="text" /></p>
-
-<p class="mpce-cfa-form-group mpce-cfa-form-text"><input class="cfa-input" id="TINid" size="50" name="TINid" placeholder="Tax Identification Number (if available)" type="text" /></p>
-
-<p class="mpce-cfa-form-group mpce-cfa-form-tel"><input class="cfa-tel required" id="PhoneNumber" name="PhoneNumber" pattern="^[+]?[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$" placeholder="Business Phone Number * " required="true" type="tel" /></p>
-
-<p class="mpce-cfa-form-group mpce-cfa-form-text"><input name="Schoolowner" type="text" class="cfa-input required" id="Schoolowner" size="50" placeholder="Full Name of Proprietor/Proprietress * " required="true" />
-</p>
-
-<p class="mpce-cfa-form-group mpce-cfa-form-text"><input name="SchoolMission" type="text" class="cfa-input required" id="SchoolMission" size="150" placeholder="School Mission Statement * " required="true" />
-</p>
-
-<p class="mpce-cfa-form-group mpce-cfa-form-select">
-  <select cfa-select="" class="cfa-select class=" id="Strenght" name="Strenght">
-    <option disabled="disabled" selected="selected" value="">School Category</option>
-    <option value="Daycare">Day Care Only</option>
-    <option value="Primaryschool">Full Primary School Only</option>
-    <option value="SecondarySchoo">Secondary School Only</option>
-    <option value="FullSchool">Full Primary and Secondary School</option><option value="VocatioanlCenter">Vocational Center</option>
-    <option value="Large Enterprise">Full Primary,Secondary,Cambridge</option>
-  </select>
-</p>
-
-<p class="mpce-cfa-form-group mpce-cfa-form-select"><select cfa-select="" class="cfa-select class=" id="Strenght" name="Strenght">
-  <option disabled="disabled" selected="selected" value="">NSWIP Packages</option>
-  <option value="BANKHUB">Starter </option>
-  <option value="STOCKER">Classic</option>
-  <option value="CDAs">Premium</option>
-</select>
-</p>
-
-<p class="mpce-cfa-form-group mpce-cfa-form-select">
-  <select cfa-select="" class="cfa-select class=" id="Package" name="Package" required="">
-    <option disabled="disabled" selected="selected" value="">Choose 1st Stage Setup and Configuration</option>
-    <option value="Frontend Website Only)">Front End Academic Website Only </option>
-    <option value="Frontend With Admin Self Update">Frontend with Admin Self Update</option>
-    <option value="Full self maintain with billing and payement transaction">Selfmaintained with school billing and payment system</option>
-    <option value="Fullweb with Payment and Academic">Self Maintained, Billing and Payment with Academic Activities</option>
-  </select>
-</p>
-
-<p class="mpce-cfa-form-group mpce-cfa-form-text"><input class="cfa-input required" id="SchoolDomain.sch.ng" size="70" name="SchoolDomain.sch.ng" placeholder="Prefer School Domain(e.g: www.yourschoolname.sch.ng) * " required="true" type="text" /></p>
-
-<p class="mpce-cfa-form-group mpce-cfa-form-text"><input class="cfa-input" id="Agent ID" size="50" name="Agent ID" placeholder="If signing up through a third party or agent, enter Agent ID" type="text" /></p>
-
-<p class="mpce-cfa-form-group mpce-cfa-form-file"><label class="mpce-cfa-label" for="BusinessLogo">Upload Your Scanned Approval Letter from Government (PNG,JPG or JPEG format only) * </label><br />
-<input class="cfa-file required" id="BusinessLogo" name="BusinessLogo" required="true" type="file" /><br />
-<input name="upload_name" type="hidden" value="BusinessLogo" /></p>
-
-<div class="mpce-cfa-message"></div>
-
-<p><input name="cfa_name" type="hidden" value="NSWIP APPLICATION" /><input name="cfa_id" type="hidden" value="" /></p>
-
-<p class="smue-button-obj mpce-cfa-form-group mpce-cfa-form-submit"><input class="cfa-submit  smue-btn-size- form-submit" name="cfa-submit" type="submit" value="Submit Application" /><img class="mpce-cfa-loader" src="{{asset('img/loader.gif')}}" /><br />
-<style type="text/css">.smue-form-64.mpce-cfa-form [type="text"], .smue-form-64.mpce-cfa-form [type="file"], .smue-form-64.mpce-cfa-form [type="password"], .smue-form-64.mpce-cfa-form [type="email"], .smue-form-64.mpce-cfa-form [type="tel"], .smue-form-64.mpce-cfa-form [type="number"], .smue-form-64.mpce-cfa-form select, .smue-form-64.mpce-cfa-form textarea { border-width : 1.000000px !important;} .smue-form-64.mpce-cfa-form [type="text"]:focus, .smue-form-64.mpce-cfa-form [type="file"]:focus, .smue-form-64.mpce-cfa-form [type="password"]:focus, .smue-form-64.mpce-cfa-form [type="email"]:focus, .smue-form-64.mpce-cfa-form [type="tel"]:focus, .smue-form-64.mpce-cfa-form [type="number"]:focus, .smue-form-64.mpce-cfa-form textarea:focus, .smue-form-64.mpce-cfa-form select:focus { border-width : 1.000000px !important;}
-</style>
-</p>
-</form>
-</div>
 
             
             <li>

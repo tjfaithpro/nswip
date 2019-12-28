@@ -18,7 +18,10 @@
 Route::get('/', 'indexPage@index');
 Route::get('/registration', 'registrationController@index');
 Route::post('/register', 'registrationController@store');
+Route::get('/checkEmail', 'registrationController@checkEmail');
 // Route::get('/registrationConfirm', 'PhpmailerController@sendEmail');
+
+
 Route::get('/registrationConfirm','registrationController@confirm');
 
 

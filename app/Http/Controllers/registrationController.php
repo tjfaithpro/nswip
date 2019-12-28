@@ -12,47 +12,66 @@ class registrationController extends Controller
         return view ('registration.registration');
     }
 
-    public function store(Request $request){
+    public function checkEmail(Request $request){
+        if (Registration::where('email', '=', $request->email)->exists()) {
+            // return $request->email.'Email exist';
+            // return response()->json(['message'=>'Email Exist']);
     
-        $register = new Registration;
-        $register->surname = $request->surname;
-        $register->middlename = $request->middlename;
-        $register->firstname = $request->firstname;
-        $register->email = $request->email;
-        $register->schoolRegName = $request->schoolRegName;
-        $register->nameOfSchool = $request->nameOfSchool;
-        $register->schoolCat = $request->schoolCat;
-        $register->schoolID = $request->schoolID;
-        $register->schoolRCNo = $request->schoolRCNo;
-        $register->officialEmail = $request->officialEmail;
-        $register->schoolAddress = $request->schoolAddress;
-        $register->propritorName = $request->propritorName;
-        $register->taxRate = $request->taxRate;
-        $register->taxId = $request->taxId;
-        $register->businessTel = $request->businessTel;
-        $register->agentID = $request->agentID;
-        $register->nswipPackage = $request->nswipPackage;
-        $register->setupConfig = $request->setupConfig;
-        $register->domain = $request->domain;
-        $register->fileUpload = $request->fileUpload;
-        $register->save();   
+            return $request->email;
+         }
 
-        //save to excel format
-        $filename = $request->email." Registration Data.xlsx";
-        Excel::store(new registrationData,$filename);
-        $path = storage_path($filename);
+    }
+    public function store(Request $request){
+//         $ajax = $request->headers->get('HTTP_X_REQUESTED_WITH');
+// if($ajax != 'xmlhttprequest'){
+//  throw new \Exception("This is not an ajax request");
+// }else{}
+    // Check if email exist
+    
 
-        $data = [
-            'sender_address'=>'nswipreg@nswip.org.ng',
-            'subject'=>'NEW REGISTRATION',
-            'sender_name'=>'NSWIP NG',
-            
-            'reply_to'=>$request->email,
-            'client_name'=>$request->firstname,
-            'message' => 'NWISP REGISTRATION'
-            
-            ];
-        Mail::to('nswipreg@nswip.org.ng')->attachData($path,$filename)->send(new TestEmail($data));
+            $register = new Registration;
+            $register->surname = $request->surname;
+            $register->middlename = $request->middlename;
+            $register->firstname = $request->firstname;
+            $register->email = $request->email;
+            $register->schoolRegName = $request->schoolRegName;
+            $register->nameOfSchool = $request->nameOfSchool;
+            $register->schoolCat = $request->schoolCat;
+            $register->schoolID = $request->schoolID;
+            $register->schoolRCNo = $request->schoolRCNo;
+            $register->officialEmail = $request->officialEmail;
+            $register->schoolAddress = $request->schoolAddress;
+            $register->propritorName = $request->propritorName;
+            $register->taxRate = $request->taxRate;
+            $register->taxId = $request->taxId;
+            $register->businessTel = $request->businessTel;
+            $register->agentID = $request->agentID;
+            $register->nswipPackage = $request->nswipPackage;
+            $register->setupConfig = $request->setupConfig;
+            $register->domain = $request->domain;
+            $register->fileUpload = $request->fileUpload;
+            $register->save(); 
+     
+            // return view ('registration.registrationConfirm');
+            //save to excel format
+            // $filename = $request->email." Registration Data.xlsx";
+            // Excel::store(new registrationData,$filename);
+            // $path = storage_path($filename);
+    
+            // $data = [
+            //     'sender_address'=>'nswipreg@nswip.org.ng',
+            //     'subject'=>'NEW REGISTRATION',
+            //     'sender_name'=>'NSWIP NG',
+                
+            //     'reply_to'=>$request->email,
+            //     'client_name'=>$request->firstname,
+            //     'message' => 'NWISP REGISTRATION'
+                
+            //     ];
+            //     // ->attachData($path,$filename)
+            // Mail::to('nswipreg@nswip.org.ng')->send(new sendMail($data));
+      
+       
 
         // $filename = "Registration Data.xlsx";
     
@@ -78,7 +97,25 @@ class registrationController extends Controller
             // return view ('registration.registrationConfirm');
     }
 
-public function confirm(){
+
+    // MAIL_DRIVER=smtp
+    // MAIL_HOST=smtp.sendgrid.net
+    // MAIL_PORT=465
+    // MAIL_USERNAME=TJFaith
+    // MAIL_PASSWORD=faithproxx22
+    // MAIL_ENCRYPTION=ssl
+
+public function confirm(Request $request){
+
+    // $ajax = $request->headers->get('HTTP_X_REQUESTED_WITH');
+    // if($ajax != 'xmlhttprequest'){
+    //  throw new \Exception("This is not an ajax request");
+    // }else{
+    //     return 'got';
+        return view ('registration.registrationConfirm');
+    // }
+    
+            
     // $filename = "Registration Data.xlsx";
     
     // Excel::store(new registrationData,$filename);
@@ -99,6 +136,6 @@ public function confirm(){
     //     $message->attach($path); 
     // });
     // return Excel::download(new registrationData, 'disney.xlsx');
-    return view ('registration.registrationConfirm');
+    // return view ('registration.registrationConfirm');
 }
 }
