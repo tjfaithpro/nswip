@@ -11,9 +11,9 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('layout/pageLayout');
-// });
+Route::get('/dd', function () {
+    return view('emails/test');
+});
 
 Route::get('/', 'indexPage@index');
 Route::get('/registration', 'registrationController@index');
