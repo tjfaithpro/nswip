@@ -10,16 +10,16 @@ use Illuminate\Queue\SerializesModels;
 class sendMail extends Mailable
 {
     use Queueable, SerializesModels;
-    public $data;
+    // public $details;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($data)
+    public function __construct()
     {
-        $this->data = $data;
+        // $this->details = $details;
     }
 
     /**
@@ -29,7 +29,19 @@ class sendMail extends Mailable
      */
     public function build()
     {
-        return $this->view('tjbenbiz@gmail.com')->subject('New Registration')->view('registration.registration')->with('data',$this->data);
+        Mail::send ( 'email', $data, function ($message) {
         
+            $message->from ( 'donotreply@demo.com', 'Just Laravel' );
+            
+            $message->to ( Request::get ( 'toEmail' ) )->subject ( 'Just Laravel demo email using SendGrid' );
+        } );
+        return Redirect::back ()->withErrors ( [ 
+                'Your email has been sent successfully' 
+        ] );
+
+        return view('registration.registration');
+
+        // return $this->view('tjbenbiz@gmail.com')->subject('New Registration')->view('registration.registration')->with('data',$this->data);
+
     }
 }
