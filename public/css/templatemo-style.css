@@ -155,15 +155,15 @@ video::-webkit-media-controls {
 
 .cd-slider-nav .image-icon {
   margin: 0 auto;
-  margin-bottom: 15px;
-  display: block;
+  /* margin-bottom: 15px; */
+  /* display: block; */
   width: 80px;
   height: 80px;
-  line-height: 80px;
+  /* line-height: 80px; */
   border-radius: 50%;
   text-align: center;
   margin: 0px;
-  padding: 0px;
+  padding: 19%;
   background-color: #ffbb05;
 }
 

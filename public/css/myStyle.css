@@ -10,3 +10,35 @@
 /* }0 15px 10px #777; */
 
 /* 0 8px 6px -6px black; */
+
+
+/* Custom Loader */
+.customLoadingCover{
+    position: relative;
+    display: none;
+    
+}
+.customLoading{
+    background-color: rgba(0, 0, 0, .7);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 100;
+    color:#fff;
+}
+.customLoading .fas{
+    position: fixed;
+    top: 40%;
+    left: 46%;
+    /* transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); */
+    /* background-color: cyan; */
+    /* border: darkgreen 5px solid; */
+    padding: 5px;
+    z-index: 100;
+    font-size:500%;
+    color:#fff;
+}

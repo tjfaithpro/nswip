@@ -32,7 +32,14 @@
     </head>
 
     <body>
-
+        <div class="customLoadingCover">
+                <div class="customLoading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <div>
+                        </div>
+                    </div>
+        </div>
+            
             <div class="overlay"></div>
             <section class="top-part">
                 </div>

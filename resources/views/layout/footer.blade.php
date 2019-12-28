@@ -12,6 +12,7 @@
         <script src="{{asset('js/vendor/bootstrap.min.js')}}"></script>
         <script src="{{asset('js/plugins.js')}}"></script>
         <script src="{{asset('js/main.js')}}"></script>
+        <script src="{{asset('js/myScript.js')}}"></script>
        
 
     </body>

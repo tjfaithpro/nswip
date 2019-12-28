@@ -16,6 +16,7 @@
 // });
 
 Route::get('/', 'indexPage@index');
-Route::get('/registration', 'registraion@index');
-Route::get('/register', 'registraion@store');
+Route::get('/registration', 'registrationController@index');
+Route::post('/register', 'registrationController@store');
+Route::get('/registrationConfirm', 'registrationController@confirm');
 
