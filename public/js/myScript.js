@@ -47,11 +47,8 @@ $(document).ready(function(){
                         processData:false,
                         beforeSend:function(){
                           $('.customLoadingCover').fadeIn();
-                        },
-                        error:function(data)
-                        {
-                           alert('Error:', data.responseText);
                         }
+                      
                         
                 }).done(function(data){
                     window.location='/registrationConfirm';
@@ -59,7 +56,7 @@ $(document).ready(function(){
                     
                 }).fail(function(data){
                         // alert(data);
-                        // +'Form fail to upload, please try again'
+                        alert('Form fail to upload, please try again');
                         $('.customLoadingCover').fadeOut();
                 });
             });

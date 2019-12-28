@@ -35,6 +35,7 @@ class CreateRegistrationsTable extends Migration
             $table->string('setupConfig')->nullable();
             $table->string('domain');
             $table->string('fileUpload');
+            $table->string('generatedschoolID');
             $table->timestamps();
         });
     }

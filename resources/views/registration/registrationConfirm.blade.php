@@ -15,17 +15,21 @@
            <div class="content first-content" style="width:100vw; padding:2%;">
                 
                <H3 style="text-align:center">Thanks for choosing us</H3>
-       
-               <div class="right-feature-text">
-                  <p class="text-center" style="text-align: center;">
+               <div style="text-align:center; padding:2%; border-radius: 4px;" class="bg-light">
+                  <p style=" font-weight:400"><b>PLEASE CHECK YOUR EMAIL FOR YOUR GENERATED SCHOOL ID</b></p>
+               </div>
+              <br/>
+               <div class="right-feature-text btn-light" style="padding:2%; border-radius: 4px;">
+                  <p class="text-center" style="font-weight:1000;text-align: center;">
                     KINDLY READ THE INSTRUCTION BEFORE PROCCEEDING</p>
+                    <hr>
          
 <p class="text-center" style="text-align: center;"> 
-  Please note that your NSWIP processing and development takes 10 working days</p>
+  Note that your NSWIP processing and development takes 10 working days</p>
 
 <p class="text-center" style="text-align: center;">Development and hosting  will be done within the said 10 working days from the first day of successful completion of process</p>
 
-<p class="text-center" style="text-align: center;">Once the setup is completed, you shall be notified via email. Setup and procesing fee cost N12,800 to be paid in advance via bank to any of the following account. Ensure to make payment details with the School Name or ID Generated for your School</p>
+<p class="text-center" style="text-align: center;">Once the setup is completed, you shall be notified via email. Setup and procesing fee cost N12,800 to be paid in advance via bank to any of the following account. <span style="font-weight:900; color:red">Ensure to make payment details with the School Name or ID Generated for your School</span></p>
 
 <p class="text-center" style="text-align: center;">0148991672(GTBANK)</p>
 <p class="text-center" style="text-align: center;">0696544334(ACCESSBANK)</p>
@@ -33,7 +37,7 @@
 <p class="text-center" style="text-align: center;">ACCOUNT NAME - TECTAINET TECHNOLOGIES</p>
 <p class="text-center" style="text-align: center;">When payment is been made, kindly procceed by Clicking Complete Application</p>
 <div class="primary-button" style="text-align: center;">
-                <a target="_blank"href="http://tectainet.com/nswip.php">Complete Application</a>
+                <a href="#">Complete Application</a>
                 </div>
 
             </div>

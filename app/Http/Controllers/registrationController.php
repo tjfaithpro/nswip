@@ -27,7 +27,13 @@ class registrationController extends Controller
 //  throw new \Exception("This is not an ajax request");
 // }else{}
     // Check if email exist
-    
+
+    // Generate ID
+    $token = 'qwertzuiopasdfghjklyxcvbnmABCDEFGHIJKLMNOPQRSTUVWXYZ123456789abcdefghijklmnopqrstuvwxyz';
+    $token = str_shuffle($token);
+    $token = substr($token,  0,  3);
+    $current_date = date('Ymd');
+    $token = $token.'-'.$current_date;
 
             $register = new Registration;
             $register->surname = $request->surname;
@@ -50,8 +56,10 @@ class registrationController extends Controller
             $register->setupConfig = $request->setupConfig;
             $register->domain = $request->domain;
             $register->fileUpload = $request->fileUpload;
+            $register->generatedschoolID = $token;
             $register->save(); 
-     
+            
+            
             // return view ('registration.registrationConfirm');
             //save to excel format
             // $filename = $request->email." Registration Data.xlsx";
