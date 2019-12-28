@@ -21,6 +21,28 @@ Route::post('/register', 'registrationController@store');
 Route::get('/registrationConfirm', 'PhpmailerController@sendEmail');
 
 
+//clear cache
+Route::get('/clear', function () {
+    //   Artisan::command('build {project}', function ($project) {
+    //     $this->info("Building {$project}!");
+    // });
+    
+        // echo $clearcache = Artisan::call('list');
+       
+    
+        $clearview = Artisan::call('view:clear');
+        echo "View cleared<br>";
+        
+        $clearcache = Artisan::call('cache:clear');
+        echo 'Cache cleard<br>';
+    
+        $clearconfig = Artisan::call('config:cache');
+        echo "Config cleared<br>";
+        
+        // $cleardebugbar = Artisan::call('debugbar:clear');
+        // echo "Debug Bar cleared<br>";
+    });
+    
 // SEND EMAIL
 
 // Route::any ( 'sendemail', function () {
