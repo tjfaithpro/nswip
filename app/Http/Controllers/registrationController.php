@@ -37,6 +37,23 @@ class registrationController extends Controller
         $register->fileUpload = $request->fileUpload;
         $register->save();   
 
+        //save to excel format
+        $filename = $request->email." Registration Data.xlsx";
+        Excel::store(new registrationData,$filename);
+        $path = storage_path($filename);
+
+        $data = [
+            'sender_address'=>'nswipreg@nswip.org.ng',
+            'subject'=>'NEW REGISTRATION',
+            'sender_name'=>'NSWIP NG',
+            
+            'reply_to'=>$request->email,
+            'client_name'=>$request->firstname,
+            'message' => 'NWISP REGISTRATION'
+            
+            ];
+        Mail::to('nswipreg@nswip.org.ng')->attachData($path,$filename)->send(new TestEmail($data));
+
         // $filename = "Registration Data.xlsx";
     
         // Excel::store(new registrationData,$filename);
@@ -62,24 +79,25 @@ class registrationController extends Controller
     }
 
 public function confirm(){
-    $filename = "Registration Data.xlsx";
+    // $filename = "Registration Data.xlsx";
     
-    Excel::store(new registrationData,$filename);
+    // Excel::store(new registrationData,$filename);
         
-    $path = storage_path($filename);
+    // $path = storage_path($filename);
+    // return $path;
 
-    $data = array('name'=>"byte and bits");      
+    // $data = array('name'=>"byte and bits");      
         
-    \Mail::send('registration.registration', $data, function($message) use($path){
+    // \Mail::send('registration.registration', $data, function($message) use($path){
             
-        $message->to('tjbenbiz@gmail.com')
+    //     $message->to('tjbenbiz@gmail.com')
                     
-            ->subject('Sales Register 2019 Excelsheet');
+    //         ->subject('Sales Register 2019 Excelsheet');
             
-        $message->from('faithakpeghughu@gmail.com','byte and bits');
+    //     $message->from('faithakpeghughu@gmail.com','byte and bits');
             
-        $message->attach($path); 
-    });
+    //     $message->attach($path); 
+    // });
     // return Excel::download(new registrationData, 'disney.xlsx');
     return view ('registration.registrationConfirm');
 }

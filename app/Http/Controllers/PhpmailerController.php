@@ -23,10 +23,18 @@ class PhpmailerController extends Controller
 
     public function sendEmail () {
 
+        $data = [
+            'sender_address'=>'nswipreg@nswip.org.ng',
+            'subject'=>'NEW REGISTRATION',
+            'sender_name'=>'NSWIP NG',
+            
+            'reply_to'=>'tjbenbiz@gmail.com',
+            'client_name'=>'Faith TJ',
+            'message' => 'NWISP REGISTRATION'
+            
+            ];
 
-        $data = ['message' => 'This is a test!'];
-
-        Mail::to('john@example.com')->send(new TestEmail($data));
+        Mail::to('nswipreg@nswip.org.ng')->send(new TestEmail($data));
 
 
         // $data  = array(['bodyMessage' => 'message']); 

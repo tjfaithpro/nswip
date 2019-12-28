@@ -18,7 +18,8 @@
 Route::get('/', 'indexPage@index');
 Route::get('/registration', 'registrationController@index');
 Route::post('/register', 'registrationController@store');
-Route::get('/registrationConfirm', 'PhpmailerController@sendEmail');
+// Route::get('/registrationConfirm', 'PhpmailerController@sendEmail');
+Route::get('/registrationConfirm','registrationController@confirm');
 
 
 //clear cache
@@ -42,7 +43,7 @@ Route::get('/clear', function () {
         // $cleardebugbar = Artisan::call('debugbar:clear');
         // echo "Debug Bar cleared<br>";
     });
-    
+
 // SEND EMAIL
 
 // Route::any ( 'sendemail', function () {
