@@ -55,9 +55,9 @@ class ExportExcelController extends Controller
         //                 $sheet->formArray($registration_array, null,'A1', false, false);
         //             });
         //  });
-        Excel::store(new registrationData(), 'Registration Data.xlsx', 'C:/App/Export');
+        // Excel::store(new registrationData(), 'Registration Data.xlsx', 'C:/App/Export');
     //    return Excel::store(new registrationData(), 'Registration Data.xlsx');
-        return view ('registration.registrationConfirm'); 
+        // return view ('registration.registrationConfirm'); 
     }
 
     function excel(){

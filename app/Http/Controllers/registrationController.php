@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Mail;
+use App\Mail\sendMail;
 use Illuminate\Http\Request;
 use App\Exports\registrationData;
 use Maatwebsite\Excel\Facades\Excel;
@@ -58,6 +59,7 @@ class registrationController extends Controller
             $register->fileUpload = $request->fileUpload;
             $register->generatedschoolID = $token;
             $register->save(); 
+        
      
             // return view ('registration.registrationConfirm');
             //save to excel format
@@ -72,12 +74,14 @@ class registrationController extends Controller
                 
                 'reply_to'=>$request->email,
                 'client_name'=>$request->firstname,
-                'message' => ''
+                'generatedschoolID'=>$token,
+                // 'message' => ''
                 
                 ];
                 // ->attachData($path,$filename)
             Mail::to($request->email)->send(new sendMail($data));
-      
+            Mail::to('support@tectainet.com')->send(new adminEmail($data));
+        
        
 
         // $filename = "Registration Data.xlsx";
@@ -113,13 +117,27 @@ class registrationController extends Controller
     // MAIL_ENCRYPTION=ssl
 
 public function confirm(Request $request){
+    
+    //  $data = [
+    //             'sender_address'=>'support@tectainet.com',
+    //             'subject'=>'NSWIP REGISTRATION CONFIRMATION',
+    //             'sender_name'=>'NSWIP NG',
+                
+    //             'reply_to'=>'tjbenbiz@gmail.com',
+    //             'client_name'=>'faith',
+    //             'generatedschoolID'=>'dss',
+    //             'message' => '<p>Your School ID Code is: <span style="font-weight:900">{{generatedschoolID}}</span></p>',
+                
+    //             ];
+    //             // ->attachData($path,$filename)
+    //         Mail::to('tjbenbiz@gmail.com')->send(new sendMail($data));
 
     // $ajax = $request->headers->get('HTTP_X_REQUESTED_WITH');
     // if($ajax != 'xmlhttprequest'){
     //  throw new \Exception("This is not an ajax request");
     // }else{
     //     return 'got';
-        // return view ('registration.registrationConfirm');
+        return view ('registration.registrationConfirm');
     // }
     
             
