@@ -9,13 +9,14 @@
             
             <h2 style="text-align:center">THANK YOU FOR CHOOSING US</h2>
             <div style="display:flex; justify-content:center">
-                <img src="data:image/png;base64,{{base64_encode(file_get_contents(resource_path('img/image131.jpg')))}}" alt="NIGERIA SCHOOL WEB IDENTITIY PROJECT">
-                {{-- <img src="{{ asset('img/image131.jpg') }}" alt="NIGERIA SCHOOL WEB IDENTITIY PROJECT"> --}}
+               <img style="width:100%" src="{{ $message->embed(resource_path().'/img/image131.jpg') }}" alt="NIGERIA SCHOOL WEB IDENTITIY PROJECT" />
+                
+               
             </div>
-            {{-- <p>{{ $test_message }}</p> --}}
+           
             <div>
                     
-            <p>Your School ID Code is: <span style="font-weight:900">{{$generatedschooID}}</span></p>
+            <p>Your School ID Code is: <span style="font-weight:900">{{$generatedschoolID}}</span></p>
             <hr>
             <P style="font-size:20px">Please kindly make payment to any of the below account details then click on the below button ton complete registration process or return to <a href="http://nswip.org.ng/complete-registration">http://nswip.org.ng/complete-registration</a>  :<br/><br>
                 <div>

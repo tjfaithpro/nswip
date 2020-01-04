@@ -70,7 +70,7 @@ class registrationController extends Controller
                 'sender_name'=>'NSWIP NG',
                 
                 // 'reply_to'=>$request->email,
-                'reply_to'=>'tjbenbiz@gmail.com',
+                'reply_to'=>'support@tectainet.com',
                 'client_name'=>$request->firstname,
                 'generatedschoolID'=>$token,
                 // 'message' => ''
@@ -83,14 +83,14 @@ class registrationController extends Controller
                     'sender_name'=>'NSWIP NG',
 
                     'client_name'=> $request->surname.' '.$request->middlename.' '.$request->firstname,
-                    'email' => $request->email,
+                    'client_email' => $request->email,
                     'schoolname'=> $request->nameOfSchool,
                     'nswipPackage' =>$request->nswipPackage,
                     'generatedschoolID'=>$token,
                 ];
                 // ->attachData($path,$filename)
             Mail::to($request->email)->send(new sendMail($data));
-            Mail::to('support@tectainet.com')->send(new adminEmail($adminData));
+            Mail::to('faithakpeghughu@gmail.com')->send(new adminEmail($adminData));
         
        
 
@@ -99,10 +99,29 @@ class registrationController extends Controller
 
 public function confirm(Request $request){
    
+//   $token = 'qwertzuiopasdfghjklyxcvbnmABCDEFGHIJKLMNOPQRSTUVWXYZ123456789abcdefghijklmnopqrstuvwxyz';
+//     $token = str_shuffle($token);
+//     $token = substr($token,  0,  3);
+//     $current_date = date('Ymd');
+//     $token = $token.'-'.$current_date;
 
+
+//   $adminData = [
+//                     'sender_address'=>'support@tectainet.com',
+//                     'subject'=>'NEW NSWIP REGISTRATION',
+//                     'sender_name'=>'NSWIP NG',
+
+//                     'client_name'=> 'Felix',
+//                     'client_email' => 'tjbenbiz@gmail.com',
+//                     'schoolname'=> '$request->nameOfSchool',
+//                     'nswipPackage' =>'$request->nswipPackage',
+//                     'generatedschoolID'=>$token,
+//                 ];
+                
     
-
-        // return view ('registration.registrationConfirm');
+// Mail::to('tjbenbiz@gmail.com')->send(new adminEmail($adminData));
+        return view ('registration.registrationConfirm');
+    
     
 }
 }

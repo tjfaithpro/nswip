@@ -84,15 +84,15 @@
                                                 <span style="color:red"> *</span>
                                                 @php
                                                       $options =[
-                                                        'School Category'=>'School Category','Daycare'=>'Day Care Only',
+                                                        'Daycare'=>'Day Care Only',
                                                         'Primaryschool'=>'Full Primary School Only','SecondarySchoo'=>'Secondary School Only','FullSchool'=>'Full Primary and Secondary School','VocatioanlCenter'=>'Vocational Center',
                                                         'Large Enterprise'=>'Full Primary,Secondary,Cambridge',
                                                 ];
 
-                                                $selected = 'School Category';
+                                                $selected = '';
                                                 @endphp
                                               
-                                                {!! Form::select('schoolCat', $options, $selected, ['class'=>'form-control']) !!}
+                                                {!! Form::select('schoolCat', $options, $selected, ['class'=>'form-control','placeholder'=>'=========']) !!}
                                         </div>
 
                                     <div class="col-md-6">
@@ -173,16 +173,15 @@
                                                 <span style="color:red"> *</span>
                                                 @php
                                                       $options =[
-                                                       'nswipPackages'=>'NSWIP Packages',
-                                                       "BANKHUB"=>'Starter',
-                                                       "STOCKER"=>'Classic',
-                                                       "CDAs"=>'Premium',
+                                                       "Starter"=>'Starter',
+                                                       "Classic"=>'Classic',
+                                                       "Premium"=>'Premium',
                                                 ];
 
-                                                $selected = 'nswipPackages';
+                                                $selected ='';
                                                 @endphp
                                               
-                                                {!! Form::select('nswipPackage', $options, $selected, ['class'=>'form-control','required']) !!}
+                                                {!! Form::select('nswipPackage', $options, $selected, ['class'=>'form-control','placeholder'=>'=========','required']) !!}
                                 </div>
 
                                 <div class="col-md-6">
@@ -196,10 +195,10 @@
                                                        "Fullweb with Payment and Academic"=>'Self Maintained, Billing and Payment with Academic Activities',
                                                 ];
 
-                                                $selected = 'Frontend Website Only';
+                                                $selected = '';
                                                 @endphp
                                               
-                                                {!! Form::select('setupConfig', $options, $selected, ['class'=>'form-control','required']) !!}
+                                                {!! Form::select('setupConfig', $options, $selected, ['class'=>'form-control','placeholder'=>'=========','required']) !!}
                                         </div>
                                 
                 </div>

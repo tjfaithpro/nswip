@@ -33,16 +33,16 @@ class adminEmail extends Mailable
         $name = $this->data['sender_name'];
         
         $client_email = $this->data['client_email'];
-        $clint_name = $this->data['client_name'];
-        
+        $client_name = $this->data['client_name'];
+       
       
         return $this->view('emails.adminEmail')
                     ->from($address, $name)
                     ->replyTo($client_email, $client_name)
                     ->subject($subject)
                     ->with([
-                        'clint_name'=>$this->$clint_name,
-                        'client_email'=>$this->$client_email,
+                        'client_name'=>$this->data['client_name'],
+                        'client_email'=>$this->data['client_email'],
                         'generatedschoolID' =>$this->data['generatedschoolID'],
                         'schoolname'=>$this->data['schoolname'],
                         'nswipPackage'=>$this->data['nswipPackage']
