@@ -10,13 +10,13 @@ use Illuminate\Queue\SerializesModels;
 class adminEmail extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public $data;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($data)
     {
         $this->data = $data;
     }
@@ -28,12 +28,25 @@ class adminEmail extends Mailable
      */
     public function build()
     {
-        $client_name = $this->data['client_name'];
-        $address2 = $this->data['reply_to'];
+        $address = $this->data['sender_address'];
+        $subject = $this->data['subject'];
+        $name = $this->data['sender_name'];
+        
+        $client_email = $this->data['client_email'];
+        $clint_name = $this->data['client_name'];
+        
+      
+        return $this->view('emails.adminEmail')
+                    ->from($address, $name)
+                    ->replyTo($client_email, $client_name)
+                    ->subject($subject)
+                    ->with([
+                        'clint_name'=>$this->$clint_name,
+                        'client_email'=>$this->$client_email,
+                        'generatedschoolID' =>$this->data['generatedschoolID'],
+                        'schoolname'=>$this->data['schoolname'],
+                        'nswipPackage'=>$this->data['nswipPackage']
+                        ]);
 
-        $this->subject('NEW NSWIP REGISTRATION')
-        ->to('support@tectainet.com')
-        ->with($client_name.' just registerd <br>Email Address: '.$address2)
-        ->replyTo($address2);
     }
 }

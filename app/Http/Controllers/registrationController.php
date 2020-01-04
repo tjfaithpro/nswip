@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Mail;
 use App\Mail\sendMail;
+use App\Mail\adminEmail;
 use Illuminate\Http\Request;
 use App\Exports\registrationData;
 use Maatwebsite\Excel\Facades\Excel;
@@ -61,106 +62,47 @@ class registrationController extends Controller
             $register->save(); 
         
      
-            // return view ('registration.registrationConfirm');
-            //save to excel format
-            // $filename = $request->email." Registration Data.xlsx";
-            // Excel::store(new registrationData,$filename);
-            // $path = storage_path($filename);
+            
     
             $data = [
                 'sender_address'=>'support@tectainet.com',
                 'subject'=>'NSWIP REGISTRATION CONFIRMATION',
                 'sender_name'=>'NSWIP NG',
                 
-                'reply_to'=>$request->email,
+                // 'reply_to'=>$request->email,
+                'reply_to'=>'tjbenbiz@gmail.com',
                 'client_name'=>$request->firstname,
                 'generatedschoolID'=>$token,
                 // 'message' => ''
                 
                 ];
+
+                $adminData = [
+                    'sender_address'=>'support@tectainet.com',
+                    'subject'=>'NEW NSWIP REGISTRATION',
+                    'sender_name'=>'NSWIP NG',
+
+                    'client_name'=> $request->surname.' '.$request->middlename.' '.$request->firstname,
+                    'email' => $request->email,
+                    'schoolname'=> $request->nameOfSchool,
+                    'nswipPackage' =>$request->nswipPackage,
+                    'generatedschoolID'=>$token,
+                ];
                 // ->attachData($path,$filename)
             Mail::to($request->email)->send(new sendMail($data));
-            Mail::to('support@tectainet.com')->send(new adminEmail($data));
+            Mail::to('support@tectainet.com')->send(new adminEmail($adminData));
         
        
 
-        // $filename = "Registration Data.xlsx";
-    
-        // Excel::store(new registrationData,$filename);
-            
-        // $path = storage_path($filename);
-
-        // $data = array('name'=>"byte and bits");      
-            
-        // \Mail::send('front.mail', $data, function($message) use($path){
-                
-        //     $message->to('tjbenbiz@gmail.com')
-                        
-        //         ->subject('Sales Register 2019 Excelsheet');
-                
-        //     $message->from('faithakpeghughu@gmail.com','byte and bits');
-                
-        //     $message->attach($path); 
-        // });
-        // Excel::store(new registrationData(), 'Registration Data.xlsx', 'C:/App/Export');
-        // return Excel::download(new DisneyplusExport, 'disney.xlsx');
-        //   return Excel::download(new registrationData, 'disney.xlsx');
-            // return view ('registration.registrationConfirm');
     }
 
 
-    // MAIL_DRIVER=smtp
-    // MAIL_HOST=smtp.sendgrid.net
-    // MAIL_PORT=465
-    // MAIL_USERNAME=TJFaith
-    // MAIL_PASSWORD=faithproxx22
-    // MAIL_ENCRYPTION=ssl
-
 public function confirm(Request $request){
-    
-    //  $data = [
-    //             'sender_address'=>'support@tectainet.com',
-    //             'subject'=>'NSWIP REGISTRATION CONFIRMATION',
-    //             'sender_name'=>'NSWIP NG',
-                
-    //             'reply_to'=>'tjbenbiz@gmail.com',
-    //             'client_name'=>'faith',
-    //             'generatedschoolID'=>'dss',
-    //             'message' => '<p>Your School ID Code is: <span style="font-weight:900">{{generatedschoolID}}</span></p>',
-                
-    //             ];
-    //             // ->attachData($path,$filename)
-    //         Mail::to('tjbenbiz@gmail.com')->send(new sendMail($data));
+   
 
-    // $ajax = $request->headers->get('HTTP_X_REQUESTED_WITH');
-    // if($ajax != 'xmlhttprequest'){
-    //  throw new \Exception("This is not an ajax request");
-    // }else{
-    //     return 'got';
-        return view ('registration.registrationConfirm');
-    // }
     
-            
-    // $filename = "Registration Data.xlsx";
-    
-    // Excel::store(new registrationData,$filename);
-        
-    // $path = storage_path($filename);
-    // return $path;
 
-    // $data = array('name'=>"byte and bits");      
-        
-    // \Mail::send('registration.registration', $data, function($message) use($path){
-            
-    //     $message->to('tjbenbiz@gmail.com')
-                    
-    //         ->subject('Sales Register 2019 Excelsheet');
-            
-    //     $message->from('faithakpeghughu@gmail.com','byte and bits');
-            
-    //     $message->attach($path); 
-    // });
-    // return Excel::download(new registrationData, 'disney.xlsx');
-    // return view ('registration.registrationConfirm');
+        // return view ('registration.registrationConfirm');
+    
 }
 }

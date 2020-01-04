@@ -46,12 +46,5 @@ class registrationData implements FromCollection, WithHeadingRow
       }
       
 
-    //   Excel::store('Registration Data', function($excel)use($registration_array){
-    //         $excel->setTitle('Registration Data');
-    //         $excel->sheet('Registration Data', function ($sheet)use ($registration_array){
-    //             $sheet->formArray($registration_array, null,'A1', false, false);
-    //         });
-            
-    //     });
     }
 }

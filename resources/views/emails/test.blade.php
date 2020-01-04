@@ -8,7 +8,10 @@
 
             
             <h2 style="text-align:center">THANK YOU FOR CHOOSING US</h2>
-            <div style="display:flex; justify-content:center"><img src="{{ asset('img/image131.jpg') }}" alt="NIGERIA SCHOOL WEB IDENTITIY PROJECT"></div>
+            <div style="display:flex; justify-content:center">
+                <img src="data:image/png;base64,{{base64_encode(file_get_contents(resource_path('img/image131.jpg')))}}" alt="NIGERIA SCHOOL WEB IDENTITIY PROJECT">
+                {{-- <img src="{{ asset('img/image131.jpg') }}" alt="NIGERIA SCHOOL WEB IDENTITIY PROJECT"> --}}
+            </div>
             {{-- <p>{{ $test_message }}</p> --}}
             <div>
                     
