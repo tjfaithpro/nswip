@@ -20,10 +20,11 @@
             <hr>
             <P style="font-size:20px">Please kindly make payment to any of the below account details then click on the below button ton complete registration process or return to <a href="http://nswip.org.ng/complete-registration">http://nswip.org.ng/complete-registration</a>  :<br/><br>
                 <div>
-                        0148991672(GTBANK)<br>
+                        <img src="{{$message->embed(resource_path().'img/remitaPay.jpeg')}}" alt="REMITA PAY IMAGE ICON"/>
+                        {{-- 0148991672(GTBANK)<br>
                         0696544334(ACCESSBANK)<br>
                         0122211218(WEMABANK)<br><hr>
-                        ACCOUNT NAME - TECTAINET TECHNOLOGIES
+                        ACCOUNT NAME - TECTAINET TECHNOLOGIES --}}
                 </div>
              
 

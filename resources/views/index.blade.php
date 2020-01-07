@@ -211,11 +211,12 @@ A copy of the letter of approval from the government by the school to apply for 
 
                           <div class="row">
                             <div class="col-md-4" style="text-align:justify">
-                              <h3>ACCOUNT DETIALS</h3>
+                            <img src="{{asset('img/remitaPay.jpeg')}}"/>
+                              {{-- <h3>ACCOUNT DETIALS</h3>
                               <p>0148991672(GTBANK)</p>
                               <p>0696544334(ACCESSBANK)</p>
                               <p>0122211218(WEMABANK)</p>
-                              <p>ACCOUNT NAME - TECTAINET TECHNOLOGIES</p>
+                              <p>ACCOUNT NAME - TECTAINET TECHNOLOGIES</p> --}}
                             </div>
                             <div class="col-md-8">
                               <div class="row">
