@@ -31,10 +31,11 @@
 
 <p class="text-center" style="text-align: center;">Once the setup is completed, you shall be notified via email. Setup and procesing fee cost N12,800 to be paid in advance via bank to any of the following account. <span style="font-weight:900; color:red">Ensure to make payment details with the School Name or ID Generated for your School</span></p>
 
-<p class="text-center" style="text-align: center;">0148991672(GTBANK)</p>
+{{-- <p class="text-center" style="text-align: center;">0148991672(GTBANK)</p>
 <p class="text-center" style="text-align: center;">0696544334(ACCESSBANK)</p>
 <p class="text-center" style="text-align: center;">0122211218(WEMABANK)</p>
-<p class="text-center" style="text-align: center;">ACCOUNT NAME - TECTAINET TECHNOLOGIES</p>
+<p class="text-center" style="text-align: center;">ACCOUNT NAME - TECTAINET TECHNOLOGIES</p> --}}
+<p class="text-center" style="text-align: center;"><img src="{{asset('img/remitaPay.jpeg')}}"/></p>
 <p class="text-center" style="text-align: center;">When payment is been made, kindly procceed by Clicking Complete Application</p>
 <div class="primary-button" style="text-align: center;">
                 <a href="#">Complete Application</a>
