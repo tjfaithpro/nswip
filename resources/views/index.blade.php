@@ -210,8 +210,8 @@ A copy of the letter of approval from the government by the school to apply for 
                           </div>
 
                           <div class="row">
-                            <div class="col-md-4" style="text-align:justify">
-                            <img src="{{asset('img/remitaPay.jpeg')}}"/>
+                            <div class="col-md-4" style="text-align:center">
+                            <img src="{{asset('/img/remitaPay.jpeg')}}"/>
                               {{-- <h3>ACCOUNT DETIALS</h3>
                               <p>0148991672(GTBANK)</p>
                               <p>0696544334(ACCESSBANK)</p>
@@ -233,7 +233,7 @@ A copy of the letter of approval from the government by the school to apply for 
                                   <div class="col-md-12">
                                       <p class="text-center" style="text-align: center;">When payment is been made, kindly procceed by Clicking Complete Application</p>
                                       <div class="primary-button" style="text-align: center;">
-                                                               <a target="_blank"href="#">Complete Application</a>
+                                                               <a target="_blank"href="/completeRegistration">Complete Application</a>
                                                                </div>
                                   </div>
                               </div>
