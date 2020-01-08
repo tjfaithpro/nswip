@@ -35,11 +35,12 @@ $(document).ready(function(){
             });
 
     $('.registrationForm').submit(function(event){
+        alert('test');
                 event.preventDefault();
                 $.ajax({
                         headers:{'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')},
                         type:'POST',
-                        url:'/register',
+                        url:'/new_register',
                         data: new FormData(this),
                         contentType:false,
                         cache:false,

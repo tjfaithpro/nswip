@@ -18,7 +18,7 @@ Route::get('/dd', function () {
 Route::get('/', 'indexPage@index');
 Route::get('/registration', 'registrationController@index');
 Route::get('/completeRegistration','HomeController@index')->name('home');
-Route::post('/register', 'registrationController@store');
+Route::post('/new_register', 'registrationController@store');
 Route::get('/checkEmail', 'registrationController@checkEmail');
 // Route::get('/registrationConfirm', 'PhpmailerController@sendEmail');
 

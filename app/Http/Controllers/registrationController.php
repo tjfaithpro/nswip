@@ -5,8 +5,8 @@ use Mail;
 use App\Mail\sendMail;
 use App\Mail\adminEmail;
 use Illuminate\Http\Request;
-use App\Exports\registrationData;
-use Maatwebsite\Excel\Facades\Excel;
+// use App\Exports\registrationData;
+// use Maatwebsite\Excel\Facades\Excel;
 use App\Registration;
 class registrationController extends Controller
 {
