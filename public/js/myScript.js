@@ -35,7 +35,6 @@ $(document).ready(function(){
             });
 
     $('.registrationForm').submit(function(event){
-        alert('test');
                 event.preventDefault();
                 $.ajax({
                         headers:{'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')},

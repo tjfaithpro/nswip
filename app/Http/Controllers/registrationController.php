@@ -90,7 +90,7 @@ class registrationController extends Controller
                 ];
                 // ->attachData($path,$filename)
             Mail::to($request->email)->send(new sendMail($data));
-            Mail::to('support@tectainet.com')->send(new adminEmail($adminData));
+            Mail::to('faithakpeghughu@gmail.com')->send(new adminEmail($adminData));
         
        
 
@@ -106,6 +106,18 @@ public function confirm(Request $request){
 //     $token = $token.'-'.$current_date;
 
 
+//     $data = [
+//         'sender_address'=>'support@tectainet.com',
+//         'subject'=>'NSWIP REGISTRATION CONFIRMATION',
+//         'sender_name'=>'NSWIP NG',
+        
+//         // 'reply_to'=>$request->email,
+//         'reply_to'=>'support@tectainet.com',
+//         'client_name'=>'king',
+//         'generatedschoolID'=>$token,
+//         // 'message' => ''
+        
+//         ];
 //   $adminData = [
 //                     'sender_address'=>'support@tectainet.com',
 //                     'subject'=>'NEW NSWIP REGISTRATION',
@@ -118,7 +130,7 @@ public function confirm(Request $request){
 //                     'generatedschoolID'=>$token,
 //                 ];
                 
-    
+// Mail::to('tjbenbiz@gmail.com')->send(new sendMail($data));
 // Mail::to('tjbenbiz@gmail.com')->send(new adminEmail($adminData));
         return view ('registration.registrationConfirm');
     
