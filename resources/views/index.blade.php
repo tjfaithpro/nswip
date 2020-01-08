@@ -38,7 +38,7 @@ A copy of the letter of approval from the government by the school to apply for 
                          <p class="text-center" style="text-align: center;">
                              Click Complete Application to complete your application after payment has been made</p>
                             <div class="primary-button" style="text-align: center;">
-                               <a href="#">Complete Application</a>
+                               <a href="/completeRegistration">Complete Application</a>
                       </div>
                     </div>
                   </div>                  

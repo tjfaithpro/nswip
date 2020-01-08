@@ -90,7 +90,7 @@ class registrationController extends Controller
                 ];
                 // ->attachData($path,$filename)
             Mail::to($request->email)->send(new sendMail($data));
-            Mail::to('faithakpeghughu@gmail.com')->send(new adminEmail($adminData));
+            Mail::to('support@tectainet.com')->send(new adminEmail($adminData));
         
        
 
@@ -123,5 +123,9 @@ public function confirm(Request $request){
         return view ('registration.registrationConfirm');
     
     
+}
+
+public function completeRegistration(){
+    return view('/home');
 }
 }
