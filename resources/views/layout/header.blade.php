@@ -17,10 +17,10 @@
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="stylesheet" href="{{asset('css/templatemo-style.css')}}">
-
+        <script src="{{ asset('js/app.js') }}" defer></script>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-        <script src="{{asset('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
+        {{-- <script src="{{asset('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script> --}}
 
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,7 +30,7 @@
 
        
     </head>
-
+    
     <body>
         <div class="customLoadingCover">
                 <div class="customLoading">
@@ -46,10 +46,11 @@
                                 <div class="col-md-image">
                                 <img src="{{asset('img/image131.jpg')}}">                                          </div>
         </section>
-            
+       @include('layouts.navbar')
             <section class="cd-hero">
     
               <div class="cd-slider-nav">
+    
                 <nav>
                   <span class="cd-marker item-1"></span>
                   <ul>
@@ -87,13 +88,13 @@
                             <h6>Projects</h6>
                         </a>
                     </li>
-    
-                     <li>
-                         <a href="#0">
+
+                     <li >
+                         <a href="#0" style="justify-content:center">
                              <div class="image-icon">
                                  <img src="{{asset('img/reglogo.png')}}">
                                 </div>
-                                <h6>Register</h6>
+                                <h6 style="text-align:center">Register Website</h6>
                             </a>
                         </li>
     
@@ -105,6 +106,7 @@
                         <h6>Contact Us</h6>
                     </a>
                 </li>
+
                       
                   </ul>
                 </nav> 

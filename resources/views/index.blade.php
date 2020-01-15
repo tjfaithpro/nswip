@@ -1,3 +1,4 @@
+
 @include('layout.header')
    
 
@@ -29,7 +30,7 @@ A copy of the letter of approval from the government by the school to apply for 
 <p>Kindly go to payment page for payment instruction, then proceed to application</p>
  </p>
                         <div class="primary-button">
-                          <a target="_blank"href="{{ url('/registration') }}">Start Application</a>
+                          <a target="_blank"href="{{ url('/registration') }}">Start Registration</a>
 
                         </div>
                       </div>
@@ -38,7 +39,7 @@ A copy of the letter of approval from the government by the school to apply for 
                          <p class="text-center" style="text-align: center;">
                              Click Complete Application to complete your application after payment has been made</p>
                             <div class="primary-button" style="text-align: center;">
-                               <a href="/completeRegistration">Complete Application</a>
+                               <a target="_blank" href="{{url('/completeRegistration')}}">Complete Registration</a>
                       </div>
                     </div>
                   </div>                  
@@ -184,7 +185,7 @@ A copy of the letter of approval from the government by the school to apply for 
             {{-- REGISTER SECTION ======================================= --}}
    <li>
       <div class="heading register">
-          <h1>Register</h1>
+          <h1>Register Webiste</h1>
           <span>NSWIP Registration Proceesing Website</span> 
       </div>
       <div class="cd-half-width third-slide">
@@ -224,7 +225,7 @@ A copy of the letter of approval from the government by the school to apply for 
                                     <p class="text-center" style="text-align: center;">Fresh Application</p>
                               
                                     <div class="primary-button">
-                                        <a target="_blank"href="{{ url('/registration') }}">Start Application</a>
+                                        <a target="_blank"href="{{ url('/registration') }}">Start Registration</a>
                                       </div>
                                 </div>
                               </div>
@@ -233,7 +234,7 @@ A copy of the letter of approval from the government by the school to apply for 
                                   <div class="col-md-12">
                                       <p class="text-center" style="text-align: center;">When payment is been made, kindly procceed by Clicking Complete Application</p>
                                       <div class="primary-button" style="text-align: center;">
-                                                               <a target="_blank"href="/completeRegistration">Complete Application</a>
+                                                               <a target="_blank"href="{{url('/completeRegistration')}}">Complete Registration</a>
                                                                </div>
                                   </div>
                               </div>

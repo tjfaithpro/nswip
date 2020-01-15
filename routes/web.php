@@ -11,13 +11,10 @@
 |
 */
 
-Route::get('/dd', function () {
-    return view('emails/test');
-});
 
 Route::get('/', 'indexPage@index');
 Route::get('/registration', 'registrationController@index');
-Route::get('/completeRegistration','HomeController@index')->name('home');
+Route::get('/completeRegistration','registrationController@completeRegistration');
 Route::post('/new_register', 'registrationController@store');
 Route::get('/checkEmail', 'registrationController@checkEmail');
 // Route::get('/registrationConfirm', 'PhpmailerController@sendEmail');
@@ -71,4 +68,4 @@ Route::get('/clear', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/nswipadmin/dashboard', 'DashboardController@index')->name('dashbaord');

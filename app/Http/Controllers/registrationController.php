@@ -10,6 +10,15 @@ use Illuminate\Http\Request;
 use App\Registration;
 class registrationController extends Controller
 {
+      /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         return view ('registration.registration');
     }
@@ -37,6 +46,17 @@ class registrationController extends Controller
     $current_date = date('Ymd');
     $token = $token.'-'.$current_date;
 
+    //Generate OrderID
+    $randNUM ='1234567890123456789012345678901234567890';
+    $randNUM = str_shuffle($randNUM);
+    $randNUM = substr($randNUM, 0, 4);
+
+    $randALP ='abcdefghijklmnopqrstuvwxyz';
+    $randALP = str_shuffle($randALP);
+    $randALP = substr($randALP, 0, 2);
+
+    $orderId = 'OR'.$randNUM.'-'.$randALP;
+
             $register = new Registration;
             $register->surname = $request->surname;
             $register->middlename = $request->middlename;
@@ -59,6 +79,8 @@ class registrationController extends Controller
             $register->domain = $request->domain;
             $register->fileUpload = $request->fileUpload;
             $register->generatedschoolID = $token;
+            $register->status='pending';
+            $register->orderId=$orderId;
             $register->save(); 
         
      
@@ -90,7 +112,7 @@ class registrationController extends Controller
                 ];
                 // ->attachData($path,$filename)
             Mail::to($request->email)->send(new sendMail($data));
-            Mail::to('faithakpeghughu@gmail.com')->send(new adminEmail($adminData));
+            Mail::to('support@tectainet.com')->send(new adminEmail($adminData));
         
        
 
@@ -103,7 +125,7 @@ public function confirm(Request $request){
 //     $token = str_shuffle($token);
 //     $token = substr($token,  0,  3);
 //     $current_date = date('Ymd');
-//     $token = $token.'-'.$current_date;
+//   $token = $token.'-'.$current_date;
 
 
 //     $data = [
@@ -138,6 +160,9 @@ public function confirm(Request $request){
 }
 
 public function completeRegistration(){
-    return view('/home');
+    // return Route::get('https://login.remita.net/remita/onepage/S0000212149/biller.spa');
+    return redirect('https://login.remita.net/remita/onepage/S0000212149/biller.spa');
+    // return <a href='/https://login.remita.net/remita/onepage/S0000212149/biller.spa'></a>;
+    // return Route::controller('users', 'https://login.remita.net/remita/onepage/S0000212149/biller.spa');
 }
 }

@@ -36,6 +36,7 @@ class CreateRegistrationsTable extends Migration
             $table->string('domain');
             $table->string('fileUpload');
             $table->string('generatedschoolID');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }
