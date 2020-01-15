@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="z-index:100">
+<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="z-index:100; position:fixed; width:100%">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
                 {{ config('app.name', 'NSWIP') }}
