@@ -176,15 +176,7 @@
 
 <script>
     export default {
-      data(){
-
-      },
-      props:['domain','tuser','regstatus','activuser','orders'],
-      methods:{
-       
-      },
-        mounted() {
-          
-        }
+      props:['domain','tuser','regstatus','activuser','orders']
+      
     }
 </script>

@@ -44,9 +44,9 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer clearfix">
-                  <pagination :data="orders" @pagination-change-page="getResults">
+                  <!-- <pagination :data="orders" @pagination-change-page="getResults">
 
-                  </pagination>
+                  </pagination> -->
                 <!-- <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a> -->
                 <!-- <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a> -->
               </div>

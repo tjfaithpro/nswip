@@ -12,15 +12,21 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-const routes =[
-    {path:'/', component: require('./components/dashboardComponents/dashboard.vue').default},
-    {path:'/clints', component: require('./components/dashboardComponents/clints.vue').default}
+let routes =[
+    // for admin dashboard
+    {path:'/nswipadmin/dashboard', component: require('./components/dashboardComponents/dashboard.vue').default},
+    {path:'/nswipadmin/clints', component: require('./components/dashboardComponents/clints.vue').default},
+
+    //for user admin dashboard
+    {path:'/user_dashboard/index', component: require('./components/user_dashboard_components/dashboard.vue').default},
+
 ]
 
 
 const router = new VueRouter({
+    mode:'history',
     routes
-})
+});
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -33,7 +39,7 @@ const router = new VueRouter({
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('pagination', require('laravel-vue-pagination'))
+// Vue.component('pagination', require('laravel-vue-pagination'));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -42,5 +48,8 @@ Vue.component('pagination', require('laravel-vue-pagination'))
 
 const app = new Vue({
     el: '#app',
-    router
+    router,
+    mode:'history',
+  
+   
 });

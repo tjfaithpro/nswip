@@ -22,6 +22,7 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     public const DASHBOARD = '/nswipadmin/dashboard';
+    public const USER_DASHBOARD ='/user_dashboard/index';
 
     /**
      * Define your route model bindings, pattern filters, etc.

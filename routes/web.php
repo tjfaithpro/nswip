@@ -17,6 +17,7 @@ Route::get('/registration', 'registrationController@index');
 Route::get('/completeRegistration','registrationController@completeRegistration');
 Route::post('/new_register', 'registrationController@store');
 Route::get('/checkEmail', 'registrationController@checkEmail');
+Route::get('/user_dashboard/index','userDashboardController@index');
 // Route::get('/registrationConfirm', 'PhpmailerController@sendEmail');
 
 
@@ -68,4 +69,5 @@ Route::get('/clear', function () {
 
 Auth::routes();
 
-Route::get('/nswipadmin/dashboard', 'DashboardController@index')->name('dashbaord');
+// Route::get('/nswipadmin/dashboard', 'DashboardController@index')->name('dashbaord');
+Route::get('{path}','DashboardController@index')->where('path','([A-z\d\-\/_.]+)?');

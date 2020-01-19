@@ -25,15 +25,20 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $domain = domain::where('status','expired')->count();
-        $totaluser = Registration::get()->count();
-        $regstatus = Registration::where('status','uncompleted')->count();
-        $activuser = Registration::where('status','active')->count();
-
-        $orders = Registration::orderBy('created_at', 'asc')->get();
-        
-        return view('/nswipadmin/dashboard', compact('domain','totaluser','regstatus','activuser','orders'));
-        
+        If (Auth()->user()->user_status== 'admin'){
+            $domain = domain::where('status','expired')->count();
+            $totaluser = Registration::get()->count();
+            $regstatus = Registration::where('status','uncompleted')->count();
+            $activuser = Registration::where('status','active')->count();
+    
+            $orders = Registration::orderBy('created_at', 'asc')->get();
+            
+            return view('/nswipadmin/dashboard', compact('domain','totaluser','regstatus','activuser','orders'));
+            
+       }else{
+        return redirect('/user_dashboard/index');
+       }
+       
         
         // ->with('domain',$domain)->with('totalUser', $totalUser)->with('regStatus',$registrationStatus);
     }
